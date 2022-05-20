@@ -39,12 +39,12 @@ public class PrimeNumBwTwoNos {
 		for (int i  = 2; i <= endNum; i++) {
 			nums.add(i);
 		}
-		for (int i = 2; i <= (int) Math.sqrt(endNum); i++) {
+		for (int i = 2; i <= (int) Math.sqrt(i); i++) {
 			int temp = 2;
 			int a = i * temp;
 			while ( a <= endNum) {
 				if (nums.contains(a)) {
-					nums.remove(nums.indexOf(a));
+					nums.remove(a);
 				}
 				temp++;
 				a = i * temp;
@@ -73,8 +73,7 @@ public class PrimeNumBwTwoNos {
 		}
 		System.out.println("Total prime no.s: " + total);
 		
-		
-		System.out.println("\nEratostenes Sieve method - Primt no.s:-");
+		System.out.println("Eratostenes Sieve method - Primt no.s:-");
 		ArrayList<Integer> primes = prime_eratosthenes_sieve(end);
 		System.out.println("Total prime no.s: " + primes.size());
 		System.out.println(primes.toString());

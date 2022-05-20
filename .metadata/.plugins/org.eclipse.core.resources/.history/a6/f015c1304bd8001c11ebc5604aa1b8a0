@@ -73,8 +73,7 @@ public class PrimeNumBwTwoNos {
 		}
 		System.out.println("Total prime no.s: " + total);
 		
-		
-		System.out.println("\nEratostenes Sieve method - Primt no.s:-");
+		System.out.println("Eratostenes Sieve method - Primt no.s:-");
 		ArrayList<Integer> primes = prime_eratosthenes_sieve(end);
 		System.out.println("Total prime no.s: " + primes.size());
 		System.out.println(primes.toString());
