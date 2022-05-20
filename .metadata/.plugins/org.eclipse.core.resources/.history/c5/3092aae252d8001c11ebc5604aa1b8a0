@@ -1,0 +1,62 @@
+package pla;
+
+import java.util.HashMap;
+import java.util.Scanner;
+import pla.Basic_Functions.*;
+
+public class EulerPhiAlgorithm {
+	
+	public static HashMap<Integer, Integer> get_factors(int num) {
+		HashMap<Integer, Integer> factors = new HashMap<>();
+		if (num % 2 == 1) {
+			for (int i = 3; i <= Math.sqrt(num); i += 2) {
+				while (num % i == 0 && Basic_Functions.isprime(i) && num != 1) {
+					if (factors.containsKey(i)) {
+						factors.replace(i, factors.get(i), factors.get(i) + 1);
+					} else {
+						factors.put(i, 1);
+					}
+					num /= i;
+				}
+			}
+		} else {
+			for (int i = 2; i <= Math.sqrt(num) + 1; i++) {
+				while (num % i == 0 && Basic_Functions.isprime(i) && num != 1) {
+					if (factors.containsKey(i)) {
+						factors.replace(i, factors.get(i), factors.get(i) + 1);
+					} else {
+						factors.put(i, 1);
+					}
+					num /= i;
+				}
+				System.out.println(num + " " + i);
+			}
+		}
+		return factors;
+	}
+	
+	
+	public static int euler_phi(int num) {
+		int phi = 1;
+		if (Basic_Functions.isprime(num)) {
+			phi = num - 1;
+		} else {
+			HashMap<Integer, Integer> factors = get_factors(num);
+			System.out.println(factors.toString());
+			for (int factor : factors.keySet()) {
+				phi *= ((Math.pow(factor, factors.get(factor) - 1)) * (factor - 1));
+			}
+		}
+		return phi;
+	}
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Number: ");
+		int num = sc.nextInt();
+		
+		System.out.println("Phi value: " + euler_phi(num));
+		
+	}
+
+}

@@ -82,6 +82,21 @@ def isprime_eratostheses_sieve(endNum):
 	return nums
 
 
+def get_factors(num):
+	factors = dict()
+	if num % 2:			# odd
+		for i in range(3, int(sqrt(num)) + 1, 2):
+			while num % i == 0 and isprime(i) and num != 1:
+				factors[i] = factors.get(i, 0) + 1
+				num /= i
+	else:
+		for i in range(2, int(sqrt(num)) + 1):
+			while num % i == 0 and isprime(i) and num != 1:
+				factors[i] = factors.get(i, 0) + 1
+				num /= i
+	return factors
+
+
 def factorial(num):
     return math.factorial(num)
 
