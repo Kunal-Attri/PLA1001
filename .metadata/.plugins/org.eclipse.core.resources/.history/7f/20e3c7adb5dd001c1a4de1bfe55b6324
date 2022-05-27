@@ -64,7 +64,7 @@ public class EratosthenesSieveAlorithmPrimeNo {
 		end = sc.nextInt();
 		sc.close();
 		
-		double a = System.currentTimeMillis();
+		long a = System.currentTimeMillis();
 		
 		System.out.println("My method - Prime no.s:-");
 		for (int i = start; i <= end; i++) {
@@ -75,7 +75,7 @@ public class EratosthenesSieveAlorithmPrimeNo {
 		}
 		System.out.println("Total prime no.s: " + total);
 		
-		double b = System.currentTimeMillis();
+		long b = System.currentTimeMillis();
 		System.out.println("Time: " + ((b-a)/1000));
 		
 		

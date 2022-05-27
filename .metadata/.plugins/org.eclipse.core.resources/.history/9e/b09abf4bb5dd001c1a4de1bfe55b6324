@@ -64,25 +64,20 @@ public class EratosthenesSieveAlorithmPrimeNo {
 		end = sc.nextInt();
 		sc.close();
 		
-		double a = System.currentTimeMillis();
-		
 		System.out.println("My method - Prime no.s:-");
 		for (int i = start; i <= end; i++) {
 			if (isprime(i) && i != 1) {
-//				System.out.println(i);
+				System.out.println(i);
 				total++;
 			}
 		}
 		System.out.println("Total prime no.s: " + total);
 		
-		double b = System.currentTimeMillis();
-		System.out.println("Time: " + ((b-a)/1000));
 		
-		
-//		System.out.println("\nEratostenes Sieve method - Primt no.s:-");
-//		ArrayList<Integer> primes = prime_eratosthenes_sieve(end);
-//		System.out.println("Total prime no.s: " + primes.size());
-//		System.out.println(primes.toString());
+		System.out.println("\nEratostenes Sieve method - Primt no.s:-");
+		ArrayList<Integer> primes = prime_eratosthenes_sieve(end);
+		System.out.println("Total prime no.s: " + primes.size());
+		System.out.println(primes.toString());
 	}
 
 }
